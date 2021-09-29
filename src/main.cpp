@@ -7,7 +7,7 @@
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include "U8g2lib.h"
-#include <Wire.h> //Library for I2C interface
+#include <Wire.h>
 
 // Header file with HTML/JS Scripts for webpage
 #include "index.h"
