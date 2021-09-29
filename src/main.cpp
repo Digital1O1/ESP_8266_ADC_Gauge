@@ -8,9 +8,7 @@
 #include <ESP8266WebServer.h>
 #include "U8g2lib.h"
 #include <Wire.h>
-
-// Header file with HTML/JS Scripts for webpage
-#include "index.h"
+#include "index.h" // Header file with HTML/JS Scripts for webpage
 
 #define LED_WHITE 14
 #define LED_GREEN 12
