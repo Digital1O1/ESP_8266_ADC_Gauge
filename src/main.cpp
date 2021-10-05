@@ -1,7 +1,3 @@
-/*
- * ESP8266 NodeMCU AJAX Demo
- * Updates and Gets data from webpage without page refresh
- */
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
