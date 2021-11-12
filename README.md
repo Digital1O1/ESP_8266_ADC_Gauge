@@ -1,8 +1,8 @@
 # Main Objective Of Repository  
 - Display the following data on an HTML website using Google Charts :
-    - Analog data generated from a potentiometer 
-    - A random number generated from an ESP8266
-- Also provide two radio buttons on the mentioned website for GPIO manipulation for the Digital I/O ports on the ESP 8266
+    - Analog data generated from a potentiometer and being recieved by the ESP8266.
+    - A random number generated from an ESP8266.
+- Provide two radio buttons on the mentioned website for GPIO manipulation for the Digital I/O ports on the ESP 8266.
 
 # Items Needed
 - (1) ESP 8266
@@ -30,59 +30,61 @@
 
 # High Level Overview Of What's Going On
 
-## Asynchronous JavaScript And XML (AJAX) 
+## What's [Asynchronous JavaScript And XML (AJAX)](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started).
 
-In most IoT examples that use Espressif based boards like the ESP8266/32 use HyperText Transfer Protocol (HTTP) to display data on a website.
+A bi-directional data communication protocol.
+- Uses [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) in order to communicate with servers.
+- Which in this case is the ESP8266.
 
-Despite HTTP being a reliable IoT communication protocol, it falls short as described in the following points:
-
----
-## Only allows 1-1 communication
-HTTP was designed to communicate between two systems at one time
-
-In IoT applications, this is far from ideal
-- Example : Large industries/manufacturing units could have numerous sensors that are generating and pushing data to a server at the same time.
-- Once a request is made, the client has to wait for the server to respond, which freezes up the entire program and overall is an extremely slow way to send data.
----
-
-## HTTP wasn't made for event-based communication
-Most IoT applications are event based.
-  - Example : Sensors that measure things like
-    - Temperature
-    - Air quality
-    - Ect.
-  - Such parameters are used to manipulate peripherals like a relay
-
-HTTP was made for a REQUEST-RESPONSE based communication vs an EVENT-DRIVEN communication
-
----
-
-## [AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started) allows bi-directional communication 
-
-Between the ESP8266 and the HTML website that enables the user to:
-  - Control the GPIO pins via the website 
-  - Be able to observe both the ADC values and the random numbers being generated from the ESP8266 and being sent to the website
-
----
-
-## What's the big deal with [AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started)
-
-Uses the [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) object to communicate with servers, which in this case is the ESP8266
-
-Using AJAX allows the user to send and recieve the mentioned data formats below asynchronously; without having to refresh the entire website
+Using AJAX allows the user to send and recieve the following data formats below asynchronously; without having to refresh the entire website.
   - JSON
   - XML
   - HTML
   - Text files
+---
+
+## AJAX vs HTTP
+
+In most basic IoT examples that use Espressif based boards like the ESP8266/32 use HyperText Transfer Protocol (HTTP) to display data on a website.
+
+Despite HTTP being a reliable IoT communication protocol, it mainly falls short in the following two points.
+
+---
+
+## 1) HTTP only allows 1-1 communication.
+
+HTTP was designed to communicate between two systems at one time.
+
+In IoT applications, this is far from ideal.
+
+For example :
+  - Large industries/manufacturing units that have numerous sensors taking/pushing data to a server MUST wait for a request from the client (The user) to be made.
+  - Once the request is recieved, the client must wait for the server to respond.
+  - This process eats up valuable time and is overall an EXTREMELY slow way to transmit data.
+  
+---
+
+## 2) HTTP wasn't made for event-based communication.
+
+Most IoT applications have sensors that measure things like :
+  - Temperature.
+  - Air quality.
+  - Ect.
+
+Such parameters can be used to trigger a relay or some other peripheral.
+
+Since HTTP was made for a REQUEST-RESPONSE based communication vs an EVENT-DRIVEN communication, the ESP must wait for the client (You, the user) to make a request for the server (The ESP8266) to respond accordingly.
 
 ---
 
 ## Displaying The Data and Google Charts
 
-Displaying data on an Espressif-based microcontroller to a website isn't new
+Displaying data on an Espressif-based microcontroller to a website isn't new.
 
-But displaying the data with a chart on the other hand is something I couldn't find much about, hence the main motivation on creating this repository
+But displaying the data with a chart on the other hand is something I couldn't find much about, hence the main motivation on creating this repository.
 
-Then I stumbled upon [Google Charts](https://developers.google.com/chart)
+Then I stumbled upon [Google Charts](https://developers.google.com/chart).
 
-For this repository, I used the [gague charts](https://developers.google.com/chart/interactive/docs/gallery/gauge) that were provided
+For this repository, I used the [gague charts](https://developers.google.com/chart/interactive/docs/gallery/gauge) that were provided.
+
+Detailed comments about how the Google Chart(s) were implimented into this project can be found in the index.h/html file
