@@ -155,11 +155,9 @@ void loop()
   server.handleClient();
 
   a = analogRead(A0);
-  //t_state = server.arg("LEDstate");
-
   String adcValue = String(a);
-  //Serial.print("ADC : ");
-  //Serial.println(a);
+  
+  //Display data on OLED screen
   OLED.setCursor(5, 15);
   OLED.print("ADC Value:");
   OLED.setCursor(80, 15);
