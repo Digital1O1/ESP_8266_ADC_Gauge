@@ -46,20 +46,13 @@ const char MAIN_page[] PROGMEM = R"=====(
       //https://developers.google.com/chart/interactive/docs/reference#DataTable
       gaugeData = new google.visualization.DataTable();
       gaugeData.addColumn('number', 'ADC');
-      //gaugeData.addColumn('number', 'RandomNum');
-      //gaugeData.addRows(2);
+
       gaugeData.addRows(1);
 
       //Left Gauge
       gaugeData.setCell(0, 0, 0);
-      //Right Gauge
-      //gaugeData.setCell(0, 1, 0);
-
       gauge = new google.visualization.Gauge(document.getElementById('ADC_Gauge_Div'));
-      //gauge2 = new google.visualization.Gauge(document.getElementById('ADC_Gauge_Div'));
-
       gauge.draw(gaugeData, gaugeOptions);
-      //gauge2.draw(gaugeData, gaugeOptions2);
 
     }
 
@@ -101,9 +94,8 @@ const char MAIN_page[] PROGMEM = R"=====(
     }
 
     setInterval(function () {
-      // Call a function repetatively with 2 Second interval
       getData();
-    }, 500); //2000mSeconds update rate
+    }, 500); //500 ms update rate
 
     function getData() {
       // -------------------------------------[ ADC ]------------------------------------- // 
