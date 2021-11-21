@@ -1,5 +1,5 @@
 # Main Objective Of Repository  
-- Provide an example that uses AJAX bi-directional communication between an ESP8266 and a HTML website to:
+- Provide an example that uses AJAX communication between an ESP8266 and a HTML website to:
   - Display the following data on an HTML website using Google Charts :
     - Varying voltage from a potentiometer that's being sampled by the ESP8266 Analog to Digital converter
     - A random number generated from the ESP8266.
@@ -48,10 +48,7 @@
 
 ## What's [Asynchronous JavaScript And XML (AJAX)](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started).
 
-A bi-directional data communication protocol.
-- Uses [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) in order to communicate with servers, which is the ESP8266 in this case.
-
-Using AJAX allows the user to send and recieve the following data formats below asynchronously; without having to refresh the entire website.
+Using AJAX allows the user to send and recieve the following data formats below asynchronously; without having to refresh the entire website by using [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
   - JSON
   - XML
   - HTML
